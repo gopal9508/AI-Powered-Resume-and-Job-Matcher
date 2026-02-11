@@ -1,0 +1,124 @@
+/* ===============================
+   ANALYZE PAGE STYLES
+================================ */
+
+.analyze-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 40px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;      /* 🔥 FIX: prevent vertical clipping */
+  overflow-y: auto;             /* 🔥 FIX: allow scrolling */
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.analyze-card {
+  width: 100%;
+  max-width: 700px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* TITLE */
+.analyze-card h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+}
+
+/* TEXTAREA */
+.analyze-card textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  resize: vertical;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.analyze-card textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* BUTTON */
+.analyze-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.analyze-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ERROR */
+.error-text {
+  margin-top: 12px;
+  color: #dc2626;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* RESULT BOX */
+.result-box {
+  margin-top: 30px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+}
+
+/* SCORE CARDS */
+.score {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #047857;
+}
+
+/* SECTIONS */
+.result-section {
+  margin-bottom: 18px;
+}
+
+.result-section h4 {
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.result-section p {
+  font-size: 14px;
+  color: #374151;
+}
+
+.result-section ul {
+  padding-left: 18px;
+}
+
+.result-section li {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+/* HELPER TEXT */
+.help-text {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}

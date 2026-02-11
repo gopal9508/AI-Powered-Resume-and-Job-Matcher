@@ -1,0 +1,64 @@
+/* ===============================
+   UPLOAD RESUME PAGE
+================================ */
+
+.upload-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9fafb;
+}
+
+.upload-card {
+  background: #ffffff;
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.upload-card h2 {
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.upload-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.upload-card input[type="file"] {
+  border: 1px dashed #d1d5db;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.upload-card button {
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.upload-card button:disabled {
+  background: #9ca3af;
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 10px;
+}

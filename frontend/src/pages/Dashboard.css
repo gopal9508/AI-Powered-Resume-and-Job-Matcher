@@ -1,0 +1,80 @@
+/* ===============================
+   DASHBOARD STYLING (UI ONLY)
+================================ */
+
+.dashboard-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.dashboard-box {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.dashboard-box h1 {
+  margin-bottom: 24px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Buttons */
+.dashboard-btn {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Upload */
+.upload-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.upload-btn:hover {
+  background: #1e40af;
+}
+
+/* Analyze */
+.analyze-btn {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.analyze-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Logout */
+.logout-btn {
+  background: #ef4444;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* Helper text */
+.helper-text {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}

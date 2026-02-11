@@ -1,0 +1,65 @@
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  color: white;
+}
+
+.home-content {
+  background: white;
+  color: #111827;
+  padding: 40px;
+  max-width: 700px;
+  width: 90%;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.home-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.status {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.features div {
+  background: #f9fafb;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.actions button {
+  padding: 12px 20px;
+  margin: 0 6px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+}
+
+.actions button:hover {
+  background: #1e40af;
+}
