@@ -8,7 +8,7 @@ import compression from "compression";
 import { fileURLToPath } from "url";
 
 /* ===============================
-   PATH FIX FOR ES MODULE
+   ES MODULE PATH FIX
 ================================ */
 
 const __filename = fileURLToPath(import.meta.url);
@@ -31,24 +31,15 @@ import errorHandler from "./middleware/errorHandler.js";
 const app = express();
 
 /* ===============================
-   BASIC MIDDLEWARE
+   TRUST PROXY (For Render / Vercel)
 ================================ */
 
-app.use(cors());
-app.use(express.json());
-
-/* ===============================
-   GLOBAL CONFIG
-================================ */
-
-// Trust proxy (needed for rate-limit behind proxy)
 app.set("trust proxy", 1);
 
 /* ===============================
-   SECURITY & PERFORMANCE
+   SECURITY MIDDLEWARE
 ================================ */
 
-// Helmet
 app.use(
   helmet({
     contentSecurityPolicy: false,
@@ -56,14 +47,8 @@ app.use(
   })
 );
 
-// Compression
-app.use(compression());
-
-// Logger
-app.use(morgan("dev"));
-
 /* ===============================
-   CORS CONFIG
+   CORS CONFIGURATION
 ================================ */
 
 app.use(
@@ -74,6 +59,20 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+/* ===============================
+   PERFORMANCE
+================================ */
+
+app.use(compression());
+app.use(morgan("dev"));
+
+/* ===============================
+   BODY PARSERS
+================================ */
+
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 /* ===============================
    RATE LIMITING
@@ -93,18 +92,11 @@ const apiLimiter = rateLimit({
 app.use("/api", apiLimiter);
 
 /* ===============================
-   BODY PARSERS
-================================ */
-
-app.use(express.json({ limit: "10mb" }));
-app.use(express.urlencoded({ extended: true, limit: "10mb" }));
-
-/* ===============================
    STATIC FILES
 ================================ */
 
-app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
-app.use("/public", express.static(path.join(__dirname, "../public")));
+app.use("/uploads", express.static(path.join(__dirname, "../../uploads")));
+app.use("/public", express.static(path.join(__dirname, "../../public")));
 
 /* ===============================
    ROOT ROUTE
@@ -183,7 +175,7 @@ app.use((req, res) => {
 });
 
 /* ===============================
-   ERROR HANDLER
+   GLOBAL ERROR HANDLER
 ================================ */
 
 app.use(errorHandler);
